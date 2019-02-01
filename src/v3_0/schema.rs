@@ -774,7 +774,7 @@ pub enum SecurityScheme {
     #[serde(rename = "http")]
     Http {
         scheme: String,
-        #[serde(rename = "bearerFormat")] bearer_format: String,
+        #[serde(rename = "bearerFormat")] bearer_format: Option<String>,
     },
     // FIXME: Implement
     // #[serde(rename = "oauth2")]
