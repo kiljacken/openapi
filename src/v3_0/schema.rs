@@ -312,6 +312,9 @@ pub struct Operation {
     // /// [`security`](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#oasSecurity).
     // /// To remove a top-level security declaration, an empty array can be used.
     // pub security: Option<SecurityRequirement>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub security: Option<Vec<BTreeMap<String, Vec<String>>>>,
+
     /// An alternative `server` array to service this operation. If an alternative `server`
     /// object is specified at the Path Item Object or Root level, it will be overridden by
     /// this value.
